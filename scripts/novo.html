@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Busca em HTML</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#searchForm").submit(function(event) {
+                event.preventDefault();
+                var name = $("#nameInput").val();
+                $.ajax({
+                    type: "GET",
+                    url: "C:/Users/welli/PycharmProjects/ProjetoFinal/cadastros.csv", // Substitua pelo caminho do seu arquivo CSV
+                    dataType: "text",
+                    success: function(data) {
+                        var csvData = $.csv.toArrays(data);
+                        var results = [];
+                        for (var i = 0; i < csvData.length; i++) {
+                            if (csvData[i][0] === name) {
+                                results.push(csvData[i]);
+                            }
+                        }
+                        if (results.length > 0) {
+                            var table = "<table><tr><th>Nome_completo</th><th>CPF</th></tr>";
+                            for (var j = 0; j < results.length; j++) {
+                                table += "<tr><td>" + results[j][0] + "</td><td>" + results[j][1] + "</td></tr>";
+                            }
+                            table += "</table>";
+                            $("#searchResults").html(table);
+                        } else {
+                            $("#searchResults").html("Nenhum resultado encontrado.");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Busca em arquivo CSV</h1>
+    <form id="searchForm">
+        <label for="nameInput">Nome:</label>
+        <input type="text" id="nameInput" name="nameInput" required>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="searchResults"></div>
+</body>
+</html>
