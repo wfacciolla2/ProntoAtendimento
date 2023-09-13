@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 
-df = pd.read_csv("C:/Users/welli/PycharmProjects/ProjetoFinal/cadastros.csv",
+df = pd.read_csv("cadastros.csv",
                  encoding="latin-1",
                  sep=",",
                  header=0)
