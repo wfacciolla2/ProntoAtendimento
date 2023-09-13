@@ -6,7 +6,7 @@ st.title('Cadastros')
 
 
 def save_name(nome, nome_mae, numero_cartao, cpf, rg, data_nascimento, sexo, telefone, endereco, cep, municipio, estado, atendente):
-    filename = 'C:/Users/welli/PycharmProjects/ProjetoFinal/cadastros.csv'
+    filename = 'cadastros.csv'
     with open(filename, 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([nome, nome_mae, numero_cartao, cpf, rg, data_nascimento, sexo, telefone, endereco, cep, municipio, estado, atendente])
