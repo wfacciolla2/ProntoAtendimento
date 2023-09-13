@@ -22,7 +22,7 @@ if st.button('Buscar Cadastro'):
 with st.container():
     def main():
         # Carregando o arquivo HTML
-        with open("C:/Users/welli/PycharmProjects/ProjetoFinal/scripts/novo.html", "r") as file:
+        with open("scripts/novo.html", "r") as file:
             html_content = file.read()
         # Exibindo o conteúdo HTML
         st.markdown(html_content, unsafe_allow_html=True)
