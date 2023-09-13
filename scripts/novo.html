@@ -10,7 +10,7 @@
                 var name = $("#nameInput").val();
                 $.ajax({
                     type: "GET",
-                    url: "C:/Users/welli/PycharmProjects/ProjetoFinal/cadastros.csv", // Substitua pelo caminho do seu arquivo CSV
+                    url: "cadastros.csv", // Substitua pelo caminho do seu arquivo CSV
                     dataType: "text",
                     success: function(data) {
                         var csvData = $.csv.toArrays(data);
