@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 
 
 
-df = pd.read_csv(".../cadastros.csv",
+df = pd.read_csv("cadastros.csv",
                  encoding="latin-1",
                  sep=",",
                  header=0)
