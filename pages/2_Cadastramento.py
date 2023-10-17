@@ -24,7 +24,11 @@ nome = st.text_input('Nome completo:')
 nome_mae = st.text_input('Nome da mãe:')
 numero_cartao = st.text_input('Numero do cartão:')
 cpf = st.text_input('CPF')
+if len(cpf) < 11 or len(cpf) > 11:
+    st.error('O CPF deve conter 11 digitos')
 rg = st.text_input('RG')
+if len(rg) < 9 or len(rg) > 9:
+    st.error('O CPF deve conter 09 digitos')
 data_nascimento = st.text_input('Data de Nascimento')
 sexo = st.selectbox('Sexo', ['Masculino', 'Feminino','Sexo'])
 telefone = st.text_input('Telefone')
